@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>วิเคราะห์สภาพอากาศ - AeroDash Enterprise</title>
+  <meta name="description" content="พยากรณ์และวิเคราะห์สภาพอากาศระดับมืออาชีพอย่างละเอียด">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="l-body">
+  <header class="l-header">
+    <div class="l-container l-header__inner">
+      <div class="c-nav__brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        AeroDash
+      </div>
+      <nav class="c-nav" id="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="c-nav__link">หน้าหลัก</a>
+        <a href="weather.html" class="c-nav__link c-nav__link--active">วิเคราะห์สภาพอากาศ</a>
+        <a href="pm25.html" class="c-nav__link">คุณภาพอากาศ (PM2.5)</a>
+      </nav>
+      <button class="c-hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="l-main l-container">
+    <nav class="c-breadcrumb u-anim-fade-in" aria-label="Breadcrumb">
+      <a href="index.html" class="c-breadcrumb__link">หน้าหลัก</a>
+      <span class="c-breadcrumb__item"></span>
+      <span aria-current="page">วิเคราะห์สภาพอากาศ</span>
+    </nav>
+    
+    <section class="c-hero u-anim-fade-in u-stagger-1" style="padding-top: 0;">
+      <h1 class="c-hero__title" id="detail-title">แบบจำลองสภาพบรรยากาศ</h1>
+      <p class="c-hero__subtitle">ตัวชี้วัดและแบบจำลองพยากรณ์ที่ครอบคลุมจากการรวบรวมข้อมูลเซ็นเซอร์หลายจุด</p>
+    </section>
+
+    <section class="u-mb-8 u-anim-fade-in u-stagger-2">
+      <header class="c-section-header">
+        <h2 class="c-section-header__title">สถิติการพยากรณ์</h2>
+      </header>
+      <div class="l-grid l-grid--2-cols">
+        <div class="c-card">
+          <div class="c-card__header">
+            <h3 class="c-card__title">ปริมาณน้ำฝนรายชั่วโมง</h3>
+          </div>
+          <div class="c-card__body" style="display: flex; align-items: center; justify-content: center; min-height: 200px; background: var(--color-background); border-radius: var(--radius-md); border: 1px dashed var(--color-border);">
+            <p class="u-text-center" style="color: var(--color-muted);">แผนภูมิพร้อมสำหรับการเชื่อมต่อ API</p>
+          </div>
+        </div>
+        <div class="c-card">
+          <div class="c-card__header">
+            <h3 class="c-card__title">พลศาสตร์ของลม</h3>
+          </div>
+          <div class="c-card__body" style="display: flex; align-items: center; justify-content: center; min-height: 200px; background: var(--color-background); border-radius: var(--radius-md); border: 1px dashed var(--color-border);">
+            <p class="u-text-center" style="color: var(--color-muted);">แผนภูมิพร้อมสำหรับการเชื่อมต่อ API</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="u-mb-8 u-anim-fade-in u-stagger-3">
+      <div class="c-card" style="max-width: 800px; margin: 0 auto;">
+        <div class="c-card__header">
+          <h2 class="c-card__title">ข้อมูลโทรมาตรระดับภูมิภาค</h2>
+        </div>
+        <div class="c-card__body">
+          <div class="c-info-card">
+            <span class="c-info-card__label">ดัชนีรังสียูวี</span>
+            <span class="c-info-card__value">ปานกลาง (5)</span>
+          </div>
+          <div class="c-info-card">
+            <span class="c-info-card__label">ทัศนวิสัย</span>
+            <span class="c-info-card__value">10 กม.</span>
+          </div>
+          <div class="c-info-card">
+            <span class="c-info-card__label">ความกดอากาศ</span>
+            <span class="c-info-card__value">1012 hPa</span>
+          </div>
+          <div class="c-info-card">
+            <span class="c-info-card__label">จุดน้ำค้าง</span>
+            <span class="c-info-card__value">22°C</span>
+          </div>
+        </div>
+        <div class="c-card__footer">
+          <button class="c-btn c-btn--outline" onclick="app.showModal('ข้อมูลจากแหล่งข้อมูลจะถูกซิงค์ทุก 5 นาทีจากศูนย์อุตุนิยมวิทยาระดับภูมิภาค')">ดูแหล่งที่มาของข้อมูล</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="l-footer">
+    <div class="l-container l-footer__inner">
+      <div>&copy; 2026 ระบบ AeroDash สงวนลิขสิทธิ์ (ลิขสิทธิ์ระดับองค์กร)</div>
+      <div style="color: var(--color-muted);">เวอร์ชั่น 2.0.0</div>
+    </div>
+  </footer>
+
+  <!-- Modal Template -->
+  <div class="c-modal-backdrop" id="global-modal" aria-hidden="true">
+    <div class="c-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h3 id="modal-title" style="font-size: var(--font-size-xl); font-weight: 700; margin-bottom: var(--space-4);">ข้อมูล</h3>
+      <p id="modal-content" style="color: var(--color-muted); margin-bottom: var(--space-6);"></p>
+      <button class="c-btn c-btn--primary" id="modal-close">ปิด</button>
+    </div>
+  </div>
+
+  <div id="toast-container" class="c-toast-container" aria-live="assertive"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>

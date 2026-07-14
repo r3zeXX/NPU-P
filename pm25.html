@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>วิเคราะห์คุณภาพอากาศ - AeroDash Enterprise</title>
+  <meta name="description" content="การตรวจสอบคุณภาพอากาศอย่างละเอียดระดับมืออาชีพ">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="l-body">
+  <header class="l-header">
+    <div class="l-container l-header__inner">
+      <div class="c-nav__brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        AeroDash
+      </div>
+      <nav class="c-nav" id="main-nav" aria-label="Main Navigation">
+        <a href="index.html" class="c-nav__link">หน้าหลัก</a>
+        <a href="weather.html" class="c-nav__link">วิเคราะห์สภาพอากาศ</a>
+        <a href="pm25.html" class="c-nav__link c-nav__link--active">คุณภาพอากาศ (PM2.5)</a>
+      </nav>
+      <button class="c-hamburger" id="nav-toggle" aria-label="Toggle Navigation">
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="l-main l-container">
+    <nav class="c-breadcrumb u-anim-fade-in" aria-label="Breadcrumb">
+      <a href="index.html" class="c-breadcrumb__link">หน้าหลัก</a>
+      <span class="c-breadcrumb__item"></span>
+      <span aria-current="page">คุณภาพอากาศ</span>
+    </nav>
+    
+    <section class="c-hero u-anim-fade-in u-stagger-1" style="padding-top: 0;">
+      <h1 class="c-hero__title" id="detail-title">การวิเคราะห์ฝุ่นละออง</h1>
+      <p class="c-hero__subtitle">การวิเคราะห์ PM2.5 และ PM10 อย่างละเอียดเทียบกับแนวทางสุขภาพระดับโลก</p>
+    </section>
+
+    <!-- Primary Metrics -->
+    <section class="u-mb-8 u-anim-fade-in u-stagger-2">
+      <div class="l-grid l-grid--2-cols">
+        <div class="c-card">
+          <div class="c-card__header">
+            <h3 class="c-card__title">ดัชนีปัจจุบัน</h3>
+          </div>
+          <div class="c-card__body">
+            <div class="l-grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+              <div class="c-stat-card">
+                <span style="color: var(--color-muted); font-size: var(--font-size-sm); text-transform: uppercase;">AQI</span>
+                <span class="c-stat-card__value" style="color: var(--color-warning);">110</span>
+              </div>
+              <div class="c-stat-card">
+                <span style="color: var(--color-muted); font-size: var(--font-size-sm); text-transform: uppercase;">PM2.5</span>
+                <span class="c-stat-card__value" style="font-size: 2rem;">45</span>
+                <span style="color: var(--color-muted); font-size: var(--font-size-xs);">µg/m³</span>
+              </div>
+            </div>
+            
+            <div class="u-mt-8">
+              <h4 style="font-size: var(--font-size-sm); color: var(--color-muted); margin-bottom: var(--space-2);">เกณฑ์คุณภาพอากาศ</h4>
+              <div style="height: 8px; border-radius: 4px; background: linear-gradient(to right, var(--color-success), var(--color-warning), var(--color-danger), #7F1D1D); margin-bottom: var(--space-2);"></div>
+              <div style="display: flex; justify-content: space-between; font-size: var(--font-size-xs); color: var(--color-muted);">
+                <span>ดี</span>
+                <span>ปานกลาง</span>
+                <span>มีผลกระทบ</span>
+                <span>อันตราย</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="c-card">
+          <div class="c-card__header">
+            <h3 class="c-card__title">คำแนะนำด้านสุขภาพ</h3>
+          </div>
+          <div class="c-card__body">
+            <div style="padding: var(--space-4); background-color: #FEF3C7; border: 1px solid var(--color-warning); border-radius: var(--radius-md); color: #B45309; height: 100%;">
+              <div style="font-weight: 700; margin-bottom: var(--space-2); display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                เริ่มมีผลกระทบต่อกลุ่มเสี่ยง
+              </div>
+              <p style="font-size: var(--font-size-sm); line-height: 1.6;">เด็กและผู้ใหญ่ที่ออกแรงมาก รวมถึงผู้ที่มีโรคระบบทางเดินหายใจ เช่น โรคหืด ควรจำกัดการทำกิจกรรมกลางแจ้งเป็นเวลานาน</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="u-mb-8 u-anim-fade-in u-stagger-3">
+      <header class="c-section-header">
+        <h2 class="c-section-header__title">แนวโน้มความเข้มข้นตลอด 24 ชั่วโมง</h2>
+      </header>
+      <div class="c-card">
+        <div class="c-card__body" style="display: flex; align-items: center; justify-content: center; min-height: 300px; background: var(--color-background); border-radius: var(--radius-md); border: 1px dashed var(--color-border);">
+          <p class="u-text-center" style="color: var(--color-muted);">แผนภูมิพร้อมสำหรับการเชื่อมต่อ API</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="l-footer">
+    <div class="l-container l-footer__inner">
+      <div>&copy; 2026 ระบบ AeroDash สงวนลิขสิทธิ์ (ลิขสิทธิ์ระดับองค์กร)</div>
+      <div style="color: var(--color-muted);">เวอร์ชั่น 2.0.0</div>
+    </div>
+  </footer>
+
+  <div id="toast-container" class="c-toast-container" aria-live="assertive"></div>
+
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/router.js"></script>
+</body>
+</html>
